@@ -8,19 +8,31 @@
 
 $dossier = 'upload/';
 $fichier = basename($_FILES['avatar']['name']);
-$taille_maxi = 100000;
+$taille_maxi = 10000000;
 $taille = filesize($_FILES['avatar']['tmp_name']);
-$extensions = array('.png', '.gif', '.jpg', '.jpeg');
+$extensions = array('.png', '.jpg', '.jpeg', '.mp3');
 $extension = strrchr($_FILES['avatar']['name'], '.');
+
 //Début des vérifications de sécurité...
+if(mime_content_type($_FILES['avatar']['tmp_name']) == 'image/png' || mime_content_type($_FILES['avatar']['tmp_name']) == 'image/jpeg' || mime_content_type($_FILES['avatar']['tmp_name']) == 'audio/mpeg')
+{
+    echo 'tout vas bien !';
+}
+else
+{
+    $erreur = "tentative d'arnaque du systeme";
+}
+
 if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
 {
-    $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+    $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, mp4, avi';
 }
+
 if($taille>$taille_maxi)
 {
     $erreur = 'Le fichier est trop gros...';
 }
+
 if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
 {
     //On formate le nom du fichier ici...
