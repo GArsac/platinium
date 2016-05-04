@@ -19,7 +19,7 @@ if(!empty($theme)){
     $result = $stmt->fetch();
 
     if ($result->compte == 1) {
-        echo $theme.'existe déjà.';
+        echo $theme.' existe déjà.';
         echo '<br>';
         header('../views/pages/signUp.php');
     }
