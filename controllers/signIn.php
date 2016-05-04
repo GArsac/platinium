@@ -18,13 +18,13 @@ if (!empty($mail) && !empty($mdp)) {
     $stmt->bindParam(':mail', $mail, PDO::PARAM_STR, 255);
     $stmt->bindParam(':mdp', $new_mdp, PDO::PARAM_STR, 255);
     $stmt->execute();
-    $result = $stmt->fetch();
-    if ($result->compte == 1) {
+    $result = $stmt->fetchAll();
+    if ($result->compte == 1 && $result->enabled == 1) {
         session_start();
         header('Location:../views/pages/accueil.php');
     } else {
-        header('Location:../views/index.php');
+        echo 'Vous n\'êtes pas autorisé à accéder au service';
     }
 } else {
-    header('Location:../views/index.php');
+    echo 'Erreur dans la connexion:Le mot de passe ou le login est incorrect.';
 }

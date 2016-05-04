@@ -14,7 +14,8 @@ connect($db);
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $mail = $_POST['mail'];
-
+$date = date("d-m-Y");
+$statut = 'abonne';
 /*On hash le mdp*/
 $mdp = hash('md5', $_POST['mdp']);
 $confmdp = hash('md5', $_POST['confmdp']);
@@ -39,7 +40,7 @@ if (!empty($nom) && !empty($prenom) && !empty($mail) && !empty($mdp) && !empty($
     }
 
     /* On vérifie si il n'existe pas d'utilisateur possédant le même mail*/
-    $stmt = $db->prepare($verif_signUp);
+    $stmt = $db->prepare($checkSignUp);
     $stmt->bindParam(':mail', $mail, PDO::PARAM_STR, 255);
     $stmt->execute();
     $result = $stmt->fetch();
@@ -63,6 +64,8 @@ if (!empty($nom) && !empty($prenom) && !empty($mail) && !empty($mdp) && !empty($
             $stmt->bindParam(':nom', $nom, PDO::PARAM_STR, 255);
             $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR, 255);
             $stmt->bindParam(':mdp', $new_mdp, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':date',$date,PDO::PARAM_INT,55);
+            $stmt->bindParam(':statut',$statut,PDO::PARAM_STR,255);
 
             /*Lancement de la requête SQL*/
             $stmt->execute();
