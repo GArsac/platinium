@@ -11,5 +11,10 @@ $signIn = 'SELECT COUNT(id_profil) compte,enabled FROM profil WHERE mail = :mail
 
 /*Requête pour l'ajout de theme*/
 $addTheme = 'INSERT INTO thematique SET nom = :nom';
+/*Requête pour la suppression de theme*/
+$deleteTheme = 'DELETE FROM thematique WhERE id_theme = :id';
 /*Requête pour la vérification du theme existante*/
 $checkTheme = 'SELECT COUNT(id_theme) compte FROM thematique WHERE nom = :nom';
+
+/*Requête pour avoir l'ensemble des thématiques existant sur le site*/
+$allTheme = 'SELECT * FROM thematique';
