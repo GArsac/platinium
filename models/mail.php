@@ -42,4 +42,3 @@ function mail_reset($mail_destinataire,$rando)
         
     Voici votre clé pour réinitialiser votre mot de passe : $rando"));
 }
-
