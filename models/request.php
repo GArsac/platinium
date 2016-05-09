@@ -7,7 +7,8 @@ $signUp = 'INSERT INTO profil SET mail = :mail, nom = :nom, prenom = :prenom, md
 $checkSignUp =  'SELECT COUNT(id_profil) compte FROM profil WHERE mail = :mail';
 
 /*Requête pour la connexion*/
-$signIn = 'SELECT COUNT(id_profil) compte,enabled FROM profil WHERE mail = :mail AND mdp = :mdp GROUP BY enabled';
+$signIn = 'SELECT COUNT(id_profil) compte FROM profil WHERE mail = :mail AND mdp = :mdp';
+$signIn2 = 'SELECT * FROM profil WHERE mail = :mail AND mdp = :mdp';
 
 /*Requête pour l'ajout de theme*/
 $addTheme = 'INSERT INTO thematique SET nom = :nom';
@@ -18,3 +19,4 @@ $checkTheme = 'SELECT COUNT(id_theme) compte FROM thematique WHERE nom = :nom';
 
 /*Requête pour avoir l'ensemble des thématiques existant sur le site*/
 $allTheme = 'SELECT * FROM thematique';
+

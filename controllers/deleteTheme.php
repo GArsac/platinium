@@ -4,7 +4,6 @@ ini_set("display_errors", 1);
 
 require '../models/connect.php';
 require '../models/request.php';
-
 /*Connexion à la bdd*/
 connect($db);
 $id = $_POST['valeur'];

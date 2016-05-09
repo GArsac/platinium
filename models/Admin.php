@@ -6,6 +6,7 @@
  * Date: 06/05/16
  * Time: 09:34
  */
+
 class Admin
 {
     private $_nom,
@@ -17,15 +18,15 @@ class Admin
      * Admin constructor.
      * @param $_nom
      * @param $_prenom
-     * @param $_mail
      * @param $_statut
+     * @param $_mail
      */
-    public function __construct($_nom, $_prenom, $_mail, $_statut)
+    public function __construct($_nom, $_prenom, $_statut, $_mail)
     {
         $this->_nom = $_nom;
         $this->_prenom = $_prenom;
-        $this->_mail = $_mail;
         $this->_statut = $_statut;
+        $this->_mail = $_mail;
     }
 
 
@@ -93,5 +94,31 @@ class Admin
         $this->_statut = $statut;
     }
 
+    public function addTheme($theme,$db)
+    {
+        $checkTheme = 'SELECT COUNT(id_theme) compte FROM thematique WHERE nom = :nom';
+        $addTheme = 'INSERT INTO thematique SET nom = :nom';
 
+        if (!empty($theme)) {
+
+            $stmt = $db->prepare($checkTheme);
+            $stmt->bindParam(':nom', $theme, PDO::PARAM_STR, 255);
+            $stmt->execute();
+            $result = $stmt->fetch();
+
+
+            if ($result->compte == 1) {
+                echo $theme . ' existe déjà.';
+                echo '<br>';
+                header('../views/pages/signUp.php');
+            } elseif ($result->compte == 0) {
+                /*On prépare la requête*/
+                $stmt = $db->prepare($addTheme);
+                $stmt->bindParam(':nom', $theme, PDO::PARAM_STR, 255);
+                $stmt->execute();
+                echo 'Thème ajouté';
+                echo '<br>';
+            }
+        }
+    }
 }
