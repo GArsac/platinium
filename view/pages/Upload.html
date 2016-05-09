@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<form method="post" action="../../controler/Upload.php" enctype="multipart/form-data">
+    <input type="file" value="Fichier">
+
+    <form method="POST" action="../../controler/Upload.php" enctype="multipart/form-data">
+        <!-- On limite le fichier à 10000Ko -->
+        <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+        Fichier : <input type="file" name="avatar">
+        <input type="submit" name="envoyer" value="Envoyer le fichier">
+    </form>
+</form>
+</body>
+</html>
