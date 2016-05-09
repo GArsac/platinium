@@ -13,8 +13,10 @@ $_taille_maxi = 10000000;
 $_taille = filesize($_FILES['avatar']['tmp_name']);
 $_extensions = array('.png', '.jpg', '.jpeg', '.mp3');
 $_extension = strrchr($_FILES['avatar']['name'], '.');
+$_mime = $_FILES['avatar']['tmp_name'];
+$_mimes = array('image/png','image/jpeg','audio/mpeg');
 
-if(mime_content_type($_FILES['avatar']['tmp_name']) == 'image/png' || mime_content_type($_FILES['avatar']['tmp_name']) == 'image/jpeg' || mime_content_type($_FILES['avatar']['tmp_name']) == 'audio/mpeg')
+if(!in_array($_mime, $_mimes))
 {
     echo 'tout vas bien !';
 }
