@@ -43,6 +43,7 @@ require '../../models/Admin.php';
                 echo '<li>Déconnexion</li>';
             }
             ?>
+            <div><a href="users.php">Profil</a></div>
         </div>
 
         <div class="navbar-collapse collapse" id="menu">

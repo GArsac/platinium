@@ -1,16 +1,15 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require '../../models/Admin.php';
 session_start();
 
-require '../../models/User.php';
 
-
-$user = new User('lapa','julien', 'julien.lapa@ynov.com','User');
-
-
-$mail = $user->getMail();
-$nom = $user->getNom();
-$prenom = $user->getPrenom();
-$statut= $user->getStatut();
+$mail = $_SESSION['user']->getMail();
+$nom = $_SESSION['user']->getNom();
+$prenom = $_SESSION['user']->getPrenom();
+$statut = $_SESSION['user']->getStatut();
 
 
 ?>

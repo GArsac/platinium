@@ -42,3 +42,8 @@ function mail_reset($mail_destinataire,$rando)
         
     Voici votre clé pour réinitialiser votre mot de passe : $rando"));
 }
+
+$mail = 'julien.lapa@ynov.com';
+$rando = 6666;
+mail_confirmation($mail,$rando);
+mail_reset($mail,$rando);
