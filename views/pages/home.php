@@ -3,6 +3,9 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 require '../../models/Admin.php';
+require '../../models/Auteur.php';
+require '../../models/User.php';
+session_start();
 ?>
 
 
@@ -35,13 +38,12 @@ require '../../models/Admin.php';
                 <img style="height: 35px; width: 45px;" src="http://www.icone-png.com/png/13/12594.png" alt="tortue">
             </a>
             <?php
-            session_start();
-            if ($_SESSION['user']->getStatut() == "admin" ){
+
+
                 echo '<li><a href="addTheme.php">Ajouter un thème</a> </li>';
-            }
-            else{
+
                 echo '<li>Déconnexion</li>';
-            }
+                echo '<li><a href="list_theme.php">Liste thème</a>'
             ?>
             <div><a href="users.php">Profil</a></div>
         </div>
@@ -63,7 +65,8 @@ require '../../models/Admin.php';
                 
             </div>
             <?php
-            echo htmlentities($_SESSION['user']->getStatut())
+            echo '<pre>'.
+            var_dump($_SESSION['user']).'</pre>';
             ?>
         </div>
     </div>

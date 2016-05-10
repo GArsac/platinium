@@ -40,13 +40,13 @@
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
                 <h4>Time to Connect!!</h4>
-                <form method="post" action="../controllers/signIn.php">
+                <form method="post" action="../controllers/sign.php">
                     <input type="email" required name="mail" id="userName" class="form-control input-sm chat-input"
                            placeholder="Email"/>
                     <input type="password" required name="mdp" class="form-control input-sm chat-input"
                            placeholder="Password"/>
                     <br>
-                    <button type="submit" class="btn btn-primary btn-md">Login</button>
+                    <button type="submit" class="btn btn-primary btn-md" name="value" value="1">Login</button>
                 </form>
                 <a href="../views/pages/signUp.php">Pas encore inscrit?</a>
             </div>

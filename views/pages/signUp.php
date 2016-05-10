@@ -34,9 +34,7 @@
     </div>
 </nav>
 
-<form method="post" action="../../controllers/signUp.php">
-    <div id="warning">
-
+<form method="post" action="../../controllers/sign.php">
         <p>
             Nom:
             <br>
@@ -67,8 +65,7 @@
                    class="form-control input-sm chat-input">
         </p>
 
-        <button type="submit" class="center btn btn-primary btn-md" >Inscription</button>
-    </div>
+        <button type="submit" class="center btn btn-primary btn-md" name="valu" value="2">Inscription</button>
 </form>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

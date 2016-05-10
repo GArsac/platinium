@@ -34,7 +34,7 @@
     </div>
 </nav>
 
-<form method="post" action="../../controllers/addTheme.php">
+<form method="post" action="../../controllers/theme.php">
     <div id="warning">
 
         <p>
@@ -44,7 +44,7 @@
         </p>
    
 
-        <button type="submit" class="center btn btn-primary btn-md" >Inscription</button>
+        <button type="submit" class="center btn btn-primary btn-md" name="value" value="3" >Inscription</button>
     </div>
 </form>
 

@@ -2,6 +2,8 @@
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+
+require '../../models/Human.php';
 require '../../models/Admin.php';
 session_start();
 
@@ -13,6 +15,7 @@ $statut = $_SESSION['user']->getStatut();
 
 
 ?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -21,11 +24,13 @@ $statut = $_SESSION['user']->getStatut();
 </head>
 <body>
 <div>
-    <label >Profil :</label>
-    <?php echo '<div >'.$prenom.'</div>
-    <div >'.$nom.'</div>
-    <div >'.$mail.'</div>
-    <div >'.$statut.'</div>';?>
+    <label>Profil :</label>
+    <?php
+    echo '<div> Prenom:' . htmlentities($prenom) . '</div>
+    <div>Nom:' . htmlentities($nom) . '</div>
+    <div>Email:' . htmlentities($mail) . '</div>
+    <div>Statut:' . htmlentities($statut) . '</div>';
+    ?>
 </div>
 
 </body>

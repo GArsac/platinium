@@ -29,7 +29,7 @@ private $allTheme = 'SELECT * FROM thematique';
         $stmt->bindParam(':mdp', $new_mdp, PDO::PARAM_STR, 255);
         $stmt->execute();
         $result = $stmt->fetch();
-        return $result;
+        return $result->compte;
     }
     
     static function connexion($mail,$new_mdp,$db){
@@ -49,8 +49,9 @@ private $allTheme = 'SELECT * FROM thematique';
         $stmt->execute();
         $result = $stmt->fetch();
         
-        return $result;
+        return $result->compte;
     }
+    
     static function signUp($db,$mail,$nom,$prenom,$new_mdp,$date,$statut){
         $signUp = 'INSERT INTO profil SET mail = :mail, nom = :nom, prenom = :prenom, mdp = :mdp, dateSignUp = :date, statut = :statut';
         /*Préparation de la requête sql*/

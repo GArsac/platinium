@@ -16,7 +16,7 @@ $_extension = strrchr($_FILES['avatar']['name'], '.');
 $_mime = $_FILES['avatar']['tmp_name'];
 $_mimes = array('image/png','image/jpeg','audio/mpeg');
 
-if(!in_array($_mime, $_mimes))
+if(in_array($_mime, $_mimes))
 {
     echo 'tout vas bien !';
 }

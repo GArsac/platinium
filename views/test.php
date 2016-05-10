@@ -29,3 +29,23 @@ if ($result->enabled == 1) {
 }elseif ($result->enabled == 0) {
     echo 'Vous n\'êtes pas autorisé à accéder au service';
 }
+/*Fonction générant des clés aléatoires*/
+function randomKey ()
+{
+    for ($i=0;$i<7;$i++)
+    {
+        $nbr = rand(0,1);
+
+        if($nbr = 1)
+        {
+            $nbr = rand(65,90);
+            $key[$i] = chr($nbr);
+        }
+
+        if($nbr = 0)
+        {
+            $key[$i] = rand(0,9);
+        }
+    }
+    return $key;
+}
