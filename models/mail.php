@@ -43,6 +43,7 @@ function mail_reset($mail_destinataire,$rando)
     Voici votre clé pour réinitialiser votre mot de passe : $rando"));
 }
 
+
 /*Fonction permetant d'avertir qu'un message a été posté par rapport a un article : mail_article($mail_destinataire, $nom_article)*/
 function mail_article($mail_destinataire,$nom_article, $texte )
 {
@@ -57,3 +58,4 @@ function mail_article($mail_destinataire,$nom_article, $texte )
             'subject' => "Votre article $nom_article a reçu un message",
             'text'    => "$texte"));
 }
+
