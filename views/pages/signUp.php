@@ -35,37 +35,37 @@
 </nav>
 
 <form method="post" action="../../controllers/sign.php">
-        <p>
-            Nom:
-            <br>
-            <input type="text" name="nom" required placeholder="Nom" class="form-control input-sm chat-input">
-        </p>
-        <p>
-            Prénom:
-            <br>
-            <input type="text" name="prenom" required placeholder="Prénom" class="form-control input-sm chat-input">
-        </p>
+    <p>
+        Nom:
+        <br>
+        <input type="text" name="nom" required placeholder="Nom" class="form-control input-sm chat-input">
+    </p>
+    <p>
+        Prénom:
+        <br>
+        <input type="text" name="prenom" required placeholder="Prénom" class="form-control input-sm chat-input">
+    </p>
 
-        <p>
-            Adresse mail:
-            <br>
-            <input type="text" name="mail" required placeholder="Veuillez entrez un mail finissant par @ynov.com " class="form-control input-sm chat-input">
-        </p>
-        <p>
-            Mot de passe:
-            <br>
-            <input type="password" name="mdp" required placeholder="Mot de passe"
-                   class="form-control input-sm chat-input">
-        </p>
+    <p>
+        Adresse mail:
+        <br>
+        <input type="text" name="mail" required placeholder="Veuillez entrez un mail finissant par @ynov.com " class="form-control input-sm chat-input">
+    </p>
+    <p>
+        Mot de passe:
+        <br>
+        <input type="password" name="mdp" required placeholder="Mot de passe"
+               class="form-control input-sm chat-input">
+    </p>
 
-        <p>
-            Confirmation mot de passe:
-            <br>
-            <input type="password" name="confmdp" required placeholder="Retapez votre mot de passe"
-                   class="form-control input-sm chat-input">
-        </p>
+    <p>
+        Confirmation mot de passe:
+        <br>
+        <input type="password" name="confmdp" required placeholder="Retapez votre mot de passe"
+               class="form-control input-sm chat-input">
+    </p>
 
-        <button type="submit" class="center btn btn-primary btn-md" name="valu" value="2">Inscription</button>
+    <button type="submit" class="center btn btn-primary btn-md" name="valu" value="2">Inscription</button>
 </form>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

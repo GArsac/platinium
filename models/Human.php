@@ -14,7 +14,8 @@ abstract class Human
             $_prenom,
             $_mail,
             $_mdp,
-            $_statut;
+            $_statut,
+            $_id;
             
 
     /**
@@ -25,13 +26,14 @@ abstract class Human
      * @param $_statut
      * @param $_mdp
      */
-    public function __construct($_nom=null, $_prenom=null, $_mail=null, $_mdp=null, $_statut=null)
+    public function __construct($_nom=null, $_prenom=null, $_mail=null, $_mdp=null, $_statut=null, $_id=null)
     {
         $this->_nom = $_nom;
         $this->_prenom = $_prenom;
         $this->_mail = $_mail;
         $this->_mdp = $_mdp;
         $this->_statut = $_statut;
+        $this->_id = $_id;
     }
 
     /**
