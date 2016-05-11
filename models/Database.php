@@ -68,4 +68,11 @@ private $allTheme = 'SELECT * FROM thematique';
         /*Lancement de la requête SQL*/
         $stmt->execute();
     }
+    static function  displayTheme($db){
+        $allTheme = 'SELECT * FROM thematique';
+        $stmt = $db->prepare($allTheme);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }

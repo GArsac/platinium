@@ -1,3 +1,11 @@
+<?php
+    if(isset($_SESSION['user'])){
+        
+        if($_SESSION['user']->getStatut() != "admin") {
+            header('Location:../index.php');
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

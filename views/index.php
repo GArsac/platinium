@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/views/css/main.css">
 </head>
 <body>
 

@@ -4,6 +4,7 @@ if(!class_exists('Human')) { include 'Human.php'; }
 
 class Admin extends Human
 {
+    /*Vérifie l'existence du thème via une requête SQL*/
     public function checkTheme($theme, $db)
     {
         $checkTheme = 'SELECT COUNT(id_theme) compte FROM thematique WHERE nom = :nom';
@@ -14,7 +15,7 @@ class Admin extends Human
         return $result->compte;
 
     }
-
+    /*Ajout d'un thème à la base de données via une requête SQL*/
     public function addTheme($theme, $db)
     {
         $addTheme = 'INSERT INTO thematique SET nom = :nom';
@@ -45,11 +46,6 @@ class Admin extends Human
         $stmt = $db->prepare($deleteTheme);
         $stmt->bindParam(':id', $id, PDO::PARAM_STR, 255);
         $result = $stmt->execute();
-        if ($result == true) {
-            echo 'Succès de la suppression';
-        } elseif ($result == false) {
-            echo 'Echec de la suppression: theme inexistant';
-        }
         return $result;
     }
 }

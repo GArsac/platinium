@@ -24,7 +24,7 @@ function randomKey ()
             $key[$i] = rand(0,9);
         }
     }
-    implode($key);
+    $key = $key[0].$key[1].$key[2].$key[3].$key[4].$key[5].$key[6];
     return $key;
 }
 

@@ -6,7 +6,8 @@ require '../models/Human.php';
 require '../models/User.php';
 require '../models/Admin.php';
 require '../models/Auteur.php';
-
+require '../models/mail.php';
+session_start();
 /*Connexion à la bdd*/
 connect($db);
 
@@ -16,18 +17,18 @@ $mail = $_POST['mail'];
 $mdp = $_POST['mdp'] . crypt($_POST['mdp'], CRYPT_BLOWFISH);
 $mdp = hash('md5', $mdp);
 
-/*On prépare la requête*/
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$mail = $_POST['mail'];
-$date = date("d-m-Y");
-$statut = 'abonne';
-
 /*Valeur du bouton*/
 $value = $_POST['value'];
 $valu = $_POST['valu'];
+
 /*Inscription*/
 if($valu == 2) {
+    /*On prépare la requête*/
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $mail = $_POST['mail'];
+    $date = date("d-m-Y");
+    $statut = 'abonne';
 
     $confmdp = $_POST['confmdp'] . crypt($_POST['confmdp'], CRYPT_BLOWFISH);
     $confmdp = hash('md5', $confmdp);
@@ -61,6 +62,8 @@ if($valu == 2) {
                 /*On insère les valeurs dans la bdd*/
                 Database::signUp($db, $mail, $nom, $prenom, $mdp, $date, $statut);
                 echo 'Inscription réussite';
+                $key = randomKey();
+                mail_confirmation($mail,$key);
                 header('../views/index.php');
 
             } else {
@@ -77,14 +80,15 @@ if($valu == 2) {
         echo '<br>';
         header('../views/pages/signUp.php');
     }
-} if ($value == 1) {
+}
+/*Connexion*/
+if ($value == 1) {
     if (!empty($mail) && !empty($mdp)) {
         $result = Database::checkExistence($mail, $mdp, $db);
 
         if ($result == 1) {
             $result = Database::connexion($mail, $mdp, $db);
             if ($result->enabled == 1) {
-                session_start();
                 
                 $_SESSION['user'] = Human::findByCrendential($mail,$mdp,$db);
                header('Location:../views/pages/home.php');

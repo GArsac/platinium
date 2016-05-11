@@ -6,9 +6,10 @@ require '../../models/Admin.php';
 require '../../models/Auteur.php';
 require '../../models/User.php';
 session_start();
+if (!isset($_SESSION['user']) == true){
+    header("Location:../index.php");
+}
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -39,18 +40,17 @@ session_start();
             </a>
             <?php
 
-
-                echo '<li><a href="addTheme.php">Ajouter un thème</a> </li>';
-
-                echo '<li>Déconnexion</li>';
-                echo '<li><a href="list_theme.php">Liste thème</a>'
+            if ($_SESSION['user']->getStatut() == "admin") {
+                echo '<span><a href="addTheme.php">Ajouter un thème</a></span>';
+                echo '<span><a href="list_theme.php">Liste thème</a></span>';
+            }
             ?>
             <div><a href="users.php">Profil</a></div>
         </div>
 
         <div class="navbar-collapse collapse" id="menu">
             <ul class="nav navbar-nav">
-
+                <a href="">Deconnexion</a>
             </ul>
 
         </div>
@@ -62,11 +62,10 @@ session_start();
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
                 <h2>WELCOME</h2>
-                
+
             </div>
             <?php
-            echo '<pre>'.
-            var_dump($_SESSION['user']).'</pre>';
+
             ?>
         </div>
     </div>
