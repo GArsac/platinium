@@ -64,7 +64,7 @@ session_start();
                 <h2>WELCOME</h2>
                 
             </div>
-            <
+
         </div>
     </div>
 </div>
