@@ -1,3 +1,14 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require '../../controllers/Humans.php';
+require '../../models/Human.php';
+require '../../models/User.php';
+require '../../models/Admin.php';
+require '../../models/Auteur.php';
+session_save_path('/tmp/');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,41 +45,38 @@
     </div>
 </nav>
 
-<form method="post" action="../../controllers/signUp.php">
-    <div id="warning">
+<form method="post" action="">
+    <p>
+        Nom:
+        <br>
+        <input type="text" name="nom" required placeholder="Nom" class="form-control input-sm chat-input">
+    </p>
+    <p>
+        Prénom:
+        <br>
+        <input type="text" name="prenom" required placeholder="Prénom" class="form-control input-sm chat-input">
+    </p>
 
-        <p>
-            Nom:
-            <br>
-            <input type="text" name="nom" required placeholder="Nom" class="form-control input-sm chat-input">
-        </p>
-        <p>
-            Prénom:
-            <br>
-            <input type="text" name="prenom" required placeholder="Prénom" class="form-control input-sm chat-input">
-        </p>
+    <p>
+        Adresse mail:
+        <br>
+        <input type="text" name="mail" required placeholder="Veuillez entrez un mail finissant par @ynov.com " class="form-control input-sm chat-input">
+    </p>
+    <p>
+        Mot de passe:
+        <br>
+        <input type="password" name="mdp" required placeholder="Mot de passe"
+               class="form-control input-sm chat-input">
+    </p>
 
-        <p>
-            Adresse mail:
-            <br>
-            <input type="text" name="mail" required placeholder="Veuillez entrez un mail finissant par @ynov.com " class="form-control input-sm chat-input">
-        </p>
-        <p>
-            Mot de passe:
-            <br>
-            <input type="password" name="mdp" required placeholder="Mot de passe"
-                   class="form-control input-sm chat-input">
-        </p>
+    <p>
+        Confirmation mot de passe:
+        <br>
+        <input type="password" name="confmdp" required placeholder="Retapez votre mot de passe"
+               class="form-control input-sm chat-input">
+    </p>
 
-        <p>
-            Confirmation mot de passe:
-            <br>
-            <input type="password" name="confmdp" required placeholder="Retapez votre mot de passe"
-                   class="form-control input-sm chat-input">
-        </p>
-
-        <button type="submit" class="center btn btn-primary btn-md" >Inscription</button>
-    </div>
+    <button type="submit" class="center btn btn-primary btn-md" name="valu" value="2">Inscription</button>
 </form>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -77,3 +85,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+connect($db);
+Humans::signUp($_POST['mail'],$_POST['mdp'],$_POST['confmdp'],$_POST['nom'],$_POST['prenom'] ,$db );
+?>

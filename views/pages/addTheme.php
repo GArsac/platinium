@@ -1,3 +1,9 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require '../../models/Admin.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,7 +40,7 @@
     </div>
 </nav>
 
-<form method="post" action="../../controllers/addTheme.php">
+<form method="post" action="">
     <div id="warning">
 
         <p>
@@ -44,7 +50,7 @@
         </p>
    
 
-        <button type="submit" class="center btn btn-primary btn-md" >Inscription</button>
+        <button type="submit" class="center btn btn-primary btn-md" name="value" value="3" >Inscription</button>
     </div>
 </form>
 
@@ -54,3 +60,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+$_SESSION['user']->addTheme($_POST['theme'], $db);
+?>

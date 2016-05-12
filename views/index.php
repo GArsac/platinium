@@ -1,3 +1,12 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require '../controllers/Humans.php';
+require '../models/User.php';
+require '../models/Admin.php';
+require '../models/Auteur.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/views/css/main.css">
 </head>
 <body>
 
@@ -27,7 +36,7 @@
         </div>
 
         <div class="navbar-collapse collapse" id="menu">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbav">
 
             </ul>
 
@@ -40,13 +49,13 @@
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
                 <h4>Time to Connect!!</h4>
-                <form method="post" action="../controllers/signIn.php">
+                <form method="post" action="">
                     <input type="email" required name="mail" id="userName" class="form-control input-sm chat-input"
                            placeholder="Email"/>
                     <input type="password" required name="mdp" class="form-control input-sm chat-input"
                            placeholder="Password"/>
                     <br>
-                    <button type="submit" class="btn btn-primary btn-md">Login</button>
+                    <button type="submit" class="btn btn-primary btn-md" name="value" value="1">Login</button>
                 </form>
                 <a href="../views/pages/signUp.php">Pas encore inscrit?</a>
             </div>
@@ -60,3 +69,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+connect($db);
+Humans::signIn($_POST['mail'], $_POST['mdp'], $db);
+?>

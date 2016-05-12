@@ -3,7 +3,9 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 require '../../models/request.php';
 require '../../models/connect.php';
-
+require '../../controllers/Admins.php';
+session_save_path('/tmp');
+session_start();
 connect($db);
 
 $stmt = $db->prepare($allTheme);
@@ -18,8 +20,9 @@ for ($index = 0; $index < sizeof($result); $index++) {
         <p class="center">
         '.$category.' 
         <div style="margin: 0;float:right;">
-        <form method="post" action="../../controllers/deleteTheme.php">
-        <button type="submit" class="center btn btn-primary btn-md" name="valeur" value="' . $ref . '" id="button">Supprimer ce thème</button>
+        <form method="post" action="../../controllers/theme.php">
+        <a name="valeur" value="' . $ref . '"></a>
+        <button type="submit" class="center btn btn-primary btn-md" name="value" value="4" id="button">Supprimer ce thème</button>
         </form>
         </div>
         </div>';

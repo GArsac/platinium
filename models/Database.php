@@ -21,6 +21,9 @@ private $checkTheme = 'SELECT COUNT(id_theme) compte FROM thematique WHERE nom =
 private $allTheme = 'SELECT * FROM thematique';
 
     /*Requête pour la connexion*/
+
+
+    /*fonction générant des clés aléatoires*/
     
     static function checkExistence($mail,$new_mdp,$db){
         $signIn = 'SELECT COUNT(id_profil) compte FROM profil WHERE mail = :mail AND mdp = :mdp';
@@ -29,7 +32,7 @@ private $allTheme = 'SELECT * FROM thematique';
         $stmt->bindParam(':mdp', $new_mdp, PDO::PARAM_STR, 255);
         $stmt->execute();
         $result = $stmt->fetch();
-        return $result;
+        return $result->compte;
     }
     
     static function connexion($mail,$new_mdp,$db){
@@ -49,10 +52,11 @@ private $allTheme = 'SELECT * FROM thematique';
         $stmt->execute();
         $result = $stmt->fetch();
         
-        return $result;
+        return $result->compte;
     }
-    static function signUp($db,$mail,$nom,$prenom,$new_mdp,$date,$statut){
-        $signUp = 'INSERT INTO profil SET mail = :mail, nom = :nom, prenom = :prenom, mdp = :mdp, dateSignUp = :date, statut = :statut';
+    
+    static function signUp($db,$mail,$nom,$prenom,$new_mdp,$date,$statut,$key){
+        $signUp = 'INSERT INTO profil SET mail = :mail, nom = :nom, prenom = :prenom, mdp = :mdp, dateSignUp = :date, statut = :statut,keyGenerator = :key';
         /*Préparation de la requête sql*/
         $stmt = $db->prepare($signUp);
 
@@ -63,7 +67,7 @@ private $allTheme = 'SELECT * FROM thematique';
         $stmt->bindParam(':mdp', $new_mdp, PDO::PARAM_STR, 255);
         $stmt->bindParam(':date',$date,PDO::PARAM_INT,55);
         $stmt->bindParam(':statut',$statut,PDO::PARAM_STR,255);
-
+        $stmt->bindParam(':key',$key,PDO::PARAM_STR,255);
         /*Lancement de la requête SQL*/
         $stmt->execute();
     }

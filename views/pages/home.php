@@ -1,8 +1,10 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 require '../../models/Admin.php';
+require '../../models/Auteur.php';
+require '../../models/User.php';
+session_start();
 ?>
 
 
@@ -21,6 +23,7 @@ require '../../models/Admin.php';
 </head>
 <body>
 
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,16 +38,16 @@ require '../../models/Admin.php';
                 <img style="height: 35px; width: 45px;" src="http://www.icone-png.com/png/13/12594.png" alt="tortue">
             </a>
             <?php
-            session_start();
-            if ($_SESSION['user']->getStatut() == "admin" ){
-                echo '<li><a href="addTheme.php">Ajouter un thème</a> </li>';
-            }
-            else{
-                echo '<li>Déconnexion</li>';
+                if($_SESSION['user']->getStatut() == "admin") {
+                    echo '<a href="addTheme.php">Ajouter un thème</a>';
+
+                    echo '<a href="list_theme.php">Liste thème</a>';
             }
             ?>
+            <div><a href="users.php">Profil</a></div>
+            <a href="creerArticle.php">Créer article</a>
         </div>
-
+        <a href="">Déconnexion</a>
         <div class="navbar-collapse collapse" id="menu">
             <ul class="nav navbar-nav">
 
@@ -61,9 +64,7 @@ require '../../models/Admin.php';
                 <h2>WELCOME</h2>
                 
             </div>
-            <?php
-            echo htmlentities($_SESSION['user']->getStatut())
-            ?>
+            <
         </div>
     </div>
 </div>
