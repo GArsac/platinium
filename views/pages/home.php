@@ -16,63 +16,61 @@ if (!isset($_SESSION['user']) == true){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Connexion</title>
+    <title>Platinium</title>
     <!-- Latest compiled and minified CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu"
-                    aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">
-                <img style="height: 35px; width: 45px;" src="http://www.icone-png.com/png/13/12594.png" alt="tortue">
-            </a>
-            <?php
-
-            if ($_SESSION['user']->getStatut() == "admin") {
-                echo '<span><a href="addTheme.php">Ajouter un thème</a></span>';
-                echo '<span><a href="list_theme.php">Liste thème</a></span>';
-            }
-            ?>
-            <div><a href="users.php">Profil</a></div>
-        </div>
-
-        <div class="navbar-collapse collapse" id="menu">
-            <ul class="nav navbar-nav">
-                <a href="">Deconnexion</a>
-            </ul>
-
-        </div>
-    </div>
-</nav>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-5 col-md-3">
-            <div class="form-login">
-                <h2>WELCOME</h2>
-
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    Navigation
+                </a>
             </div>
-            <?php
-
-            ?>
+            <div class="navbar-collapse collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="users.php">Profil</a>
+                    </li>
+                    <li>
+                        <a href="list_theme.php">Thème</a>
+                    </li>
+                    <lik>
+                        <a href="articles.php">Articles</a>
+                    </lik>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="">
+                <div class="">
+                    <h1>Platinium</h1>
+                    <p>
+                        Bonjour et bien venu sur la plateforme du groupe Ynov. Retrouvez tous la documentation relative a la vie etudiante ici!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            Ici il y aura des articles
         </div>
     </div>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 </body>
 </html>
