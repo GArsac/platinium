@@ -24,56 +24,50 @@ session_start();
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                    <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="#">
-                                Navigation
-                            </a>
-                        </div>
-                        <div class="navbar-collapse collapse" id="menu">
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="users.php">Profil</a>
-                                </li>
-                                <li>
-                                    <a href="list_theme.php">Thème</a>
-                                </li>
-                                <lik>
-                                    <a href="articles.php">Articles</a>
-                                </lik>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    Navigation
+                </a>
+            </div>
+            <div class="navbar-collapse collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="users.php">Profil</a>
+                    </li>
+                    <li>
+                        <a href="list_theme.php">Thème</a>
+                    </li>
+                    <lik>
+                        <a href="articles.php">Articles</a>
+                    </lik>
+                </ul>
             </div>
         </div>
+    </nav>
+    <div class="container">
         <div class="row">
             <div class="">
-                <div class="form-login">
-                    <h2>Platinium</h2>
-
+                <div class="">
+                    <h1>Platinium</h1>
                     <p>
                         Bonjour et bien venu sur la plateforme du groupe Ynov. Retrouvez tous la documentation relative a la vie etudiante ici!
                     </p>
                 </div>
             </div>
-            <div class="article">
-                ici il y aura des articles :)
-            </div>
+        </div>
+        <div class="row">
+            Ici il y aura des articles
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
