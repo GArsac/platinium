@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <dvi classe="row">
+        <div classe="row">
             <div class="col-md-6 col-md-offset-3 col-xs-12">
                 <form method="post" action="../../controllers/sign.php">
                     <div class="form-signin">

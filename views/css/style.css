@@ -48,6 +48,28 @@ body {
 
 }
 
+.form-profil
+{
+    background-color: #EDEDED;
+    filter: alpha(opacity=0.2);
+    margin-top: 40%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+
+}
+
+
+.profil{
+    padding-left: 35%;
+}
+
+
 .btn
 {
     background-color: green;
@@ -69,13 +91,6 @@ h4 {
 
 p
 {
-    text-align: center;
-}
-
-.form-control {
-    border-radius: 10px;
-}
-.wrapper {
     text-align: center;
 }
 
