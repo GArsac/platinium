@@ -1,6 +1,6 @@
 <?php
 /*On crée un objet PDO contenant la description de la bdd */
-$db = new PDO('mysql:host=localhost;port=3306;dbname=platinium;charset=utf8', 'root', '');
+$db = new PDO('mysql:host=localhost;port=3306;dbname=platinium;charset=utf8', 'root', 'azerty');
 function connect($db)
 {
     try {
