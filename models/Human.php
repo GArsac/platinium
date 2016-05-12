@@ -17,6 +17,7 @@ abstract class Human
             $_mdp,
             $_statut,
             $_id;
+
     
 
     /**
@@ -27,6 +28,7 @@ abstract class Human
      * @param $_statut
      * @param $_mdp
      */
+
     public function __construct($_nom = null, $_prenom = null, $_mail = null, $_mdp = null, $_statut = null, $_id = null)
     {
         $this->_nom = $_nom;
@@ -36,6 +38,7 @@ abstract class Human
         $this->_statut = $_statut;
         $this->_id = $_id;
     }
+
     /**
      * @return mixed
      */
@@ -139,6 +142,7 @@ abstract class Human
 
     public function Update($nom, $prenom, $mail, $db)
     {
+
         $update = 'UPDATE profil SET nom = :nom AND prenom = :prenom WHERE mail = :mail; ';
         $stmt = $db->prepare($update);
         $stmt->bindParam(':nom', $nom, PDO::PARAM_STR, 255);
@@ -187,9 +191,9 @@ abstract class Human
             elseif ($statut == "user"){
                 $result = Database::connexion($mail,$password,$db);
                 $user =  new User($result->nom,$result->prenom,$mail,$password, $statut,$result->id_profil);
-
                 return $user;
             }
         }
+
     }
 }

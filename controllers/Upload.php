@@ -1,6 +1,5 @@
 <?php
 
-
 $_dossier = 'upload/';
 $_fichier = basename($_FILES['avatar']['name']);
 $_taille_maxi = 10000000;

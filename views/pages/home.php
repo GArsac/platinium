@@ -1,21 +1,22 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 require '../../models/Admin.php';
 require '../../models/Auteur.php';
 require '../../models/User.php';
 session_start();
+
 if (!isset($_SESSION['user']) == true){
     header("Location:../index.php");
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Platinium</title>
     <!-- Latest compiled and minified CSS -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,5 +74,6 @@ if (!isset($_SESSION['user']) == true){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 </body>
 </html>

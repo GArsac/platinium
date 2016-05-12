@@ -46,7 +46,6 @@ class Admin extends Human
         $stmt = $db->prepare($deleteTheme);
         $stmt->bindParam(':id', $id, PDO::PARAM_STR, 255);
         $result = $stmt->execute();
-
         return $result;
     }
 }

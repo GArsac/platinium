@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 error_reporting(E_ALL);
@@ -6,6 +7,7 @@ require '../../models/Admin.php';
 session_start();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,7 +17,9 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+
     <link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
 
@@ -42,7 +46,9 @@ session_start();
     </div>
 </nav>
 
+
 <form method="post" action="">
+
     <div id="warning">
 
         <p>
@@ -61,7 +67,9 @@ session_start();
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
+
 </html>
 <?php
 $_SESSION['user']->addTheme($_POST['theme'], $db);
 ?>
+

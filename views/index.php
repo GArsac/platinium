@@ -10,6 +10,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Platinium</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">

@@ -5,6 +5,7 @@ ini_set("display_errors", 1);
 
 require '../../models/Human.php';
 
+
 require '../../models/Auteur.php';
 require '../../models/User.php';
 require '../../models/Admin.php';
@@ -18,6 +19,7 @@ $statut = $_SESSION['user']->getStatut();
 
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
