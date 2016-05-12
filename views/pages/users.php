@@ -4,9 +4,12 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 require '../../models/Human.php';
-require '../../models/Admin.php';
-session_start();
 
+require '../../models/Auteur.php';
+require '../../models/User.php';
+require '../../models/Admin.php';
+
+session_start();
 
 $mail = $_SESSION['user']->getMail();
 $nom = $_SESSION['user']->getNom();
@@ -76,7 +79,6 @@ $statut = $_SESSION['user']->getStatut();
 
         </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

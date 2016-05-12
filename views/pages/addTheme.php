@@ -1,10 +1,10 @@
 <?php
-    if(isset($_SESSION['user'])){
-        
-        if($_SESSION['user']->getStatut() != "admin") {
-            header('Location:../index.php');
-        }
-    }
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require '../../models/Admin.php';
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -42,7 +42,7 @@
     </div>
 </nav>
 
-<form method="post" action="../../controllers/theme.php">
+<form method="post" action="">
     <div id="warning">
 
         <p>
@@ -62,3 +62,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+$_SESSION['user']->addTheme($_POST['theme'], $db);
+?>

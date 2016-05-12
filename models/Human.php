@@ -8,15 +8,16 @@
  */
 require 'Database.php';
 
-abstract class Human
+
+abstract class Human 
 {
     private $_nom,
-        $_prenom,
-        $_mail,
-        $_mdp,
-        $_id,
-        $_statut;
-
+            $_prenom,
+            $_mail,
+            $_mdp,
+            $_statut,
+            $_id;
+    
 
     /**
      * Admin constructor.
@@ -35,8 +36,6 @@ abstract class Human
         $this->_statut = $_statut;
         $this->_id = $_id;
     }
-
-
     /**
      * @return mixed
      */
@@ -148,7 +147,7 @@ abstract class Human
         $stmt->execute();
     }
 
-    public function UpdatePassword($password, $mail, $db)
+    public function UpdatePassword($password,$mail,$db)
     {
         $update_password = 'UPDATE profil SET mdp = :pwd WHERE mail = :mail; ';
         $stmt = $db->prepare($update_password);
@@ -157,8 +156,8 @@ abstract class Human
         $stmt->execute();
     }
 
-    static function findStatut($mail, $pwd, $db)
-    {
+
+    static  function findStatut($mail,$pwd,$db){
         $statut = 'SELECT statut FROM profil WHERE mail = :mail AND mdp = :pwd';
         $stmt = $db->prepare($statut);
         $stmt->bindParam(':pwd', $pwd, PDO::PARAM_STR, 255);
@@ -168,26 +167,29 @@ abstract class Human
         return $result->statut;
     }
 
-    public static function findByCrendential($mail, $password, $db)
+    public static function findByCrendential ($mail, $password, $db)
     {
         /*Vérifie l'existence de l'utilisateur*/
-        if ($check = Database::checkExistence($mail, $password, $db) == 1) {
+        if ($check = Database::checkExistence($mail,$password, $db) == 1)
+        {
             /*Détermine le statut de l'utilisateur*/
-            $statut = self::findStatut($mail, $password, $db);
-            if ($statut == "admin") {
-                $result = Database::connexion($mail, $password, $db);
-                $user = new Admin($result->nom, $result->prenom, $mail, $password, $statut, $result->id_profil);
+            $statut = self::findStatut($mail,$password,$db);
+            if ($statut == "admin"){
+                $result = Database::connexion($mail,$password,$db);
+                $user = new Admin($result->nom,$result->prenom,$mail,$password, $statut,$result->id_profil);
                 return $user;
-            } elseif ($statut == "auteur") {
-                $result = Database::connexion($mail, $password, $db);
-                $user = new Auteur($result->nom, $result->prenom, $mail, $password, $statut, $result->id_profil);
+            }
+            elseif($statut == "auteur"){
+                $result = Database::connexion($mail,$password,$db);
+                $user = new Auteur($result->nom,$result->prenom,$mail,$password, $statut,$result->id_profil);
                 return $user;
-            } elseif ($statut == "user") {
-                $result = Database::connexion($mail, $password, $db);
-                $user = new User($result->nom, $result->prenom, $mail, $password, $statut, $result->id_profil);
+            }
+            elseif ($statut == "user"){
+                $result = Database::connexion($mail,$password,$db);
+                $user =  new User($result->nom,$result->prenom,$mail,$password, $statut,$result->id_profil);
+
                 return $user;
             }
         }
-
     }
 }

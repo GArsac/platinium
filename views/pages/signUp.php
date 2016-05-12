@@ -1,3 +1,14 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require '../../controllers/Humans.php';
+require '../../models/Human.php';
+require '../../models/User.php';
+require '../../models/Admin.php';
+require '../../models/Auteur.php';
+session_save_path('/tmp/');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +24,7 @@
     <div class="container">
         <div classe="row">
             <div class="col-md-6 col-md-offset-3 col-xs-12">
-                <form method="post" action="../../controllers/sign.php">
+                <form method="post" action="">
                     <div class="form-signin">
                         <h4>Inscription</h4>
                         <p>
@@ -54,9 +65,14 @@
             </div>
         </div>
     </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+connect($db);
+Humans::signUp($_POST['mail'],$_POST['mdp'],$_POST['confmdp'],$_POST['nom'],$_POST['prenom'] ,$db );
+?>

@@ -6,29 +6,10 @@ ini_set("display_errors", 1);
 require '../mailgun-php/vendor/autoload.php';
 use Mailgun\Mailgun;
 
-/*fonction générant des clés aléatoires*/
-function randomKey ()
-{
-    for ($i=0;$i<7;$i++)
-    {
-        $nbr = rand(0,1);
 
-        if($nbr = 1)
-        {
-            $nbr = rand(65,90);
-            $key[$i] = chr($nbr);
-        }
-
-        if($nbr = 0)
-        {
-            $key[$i] = rand(0,9);
-        }
-    }
-    $key = $key[0].$key[1].$key[2].$key[3].$key[4].$key[5].$key[6];
-    return $key;
-}
 
 /* Fonction permetant d'envoyer un email automatique de confirmation : mail_confirmation($mail_destinataire, $rando)*/
+
 function mail_confirmation($mail_destinataire,$rando)
 {
     # Instantiate the client.
@@ -44,6 +25,7 @@ function mail_confirmation($mail_destinataire,$rando)
         
     Bienvenue sur la plateforme Platinum. Voici votre clé d'activation : $rando"));
 }
+
 
 
 
@@ -65,6 +47,7 @@ function mail_reset($mail_destinataire,$rando)
 }
 
 
+
 /*Fonction permetant d'avertir qu'un message a été posté par rapport a un article : mail_article($mail_destinataire, $nom_article)*/
 function mail_article($mail_destinataire,$nom_article, $texte )
 {
@@ -79,4 +62,5 @@ function mail_article($mail_destinataire,$nom_article, $texte )
             'subject' => "Votre article $nom_article a reçu un message",
             'text'    => "$texte"));
 }
+
 

@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: guillaume
- * Date: 04/05/2016
- * Time: 09:31
- **/
 
 $_dossier = 'upload/';
 $_fichier = basename($_FILES['avatar']['name']);
