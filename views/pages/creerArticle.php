@@ -7,7 +7,8 @@
  */
 
 require '../../models/Auteur.php';
-
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 session_start();
 
 ?>
@@ -42,9 +43,7 @@ session_start();
         <div class="adjoined-bottom">
             <div class="grid-container">
                 <div class="grid-width-100">
-                    <div id="editor">
-                        <textarea name="texte" id="" cols="30" rows="10"></textarea>
-                    </div>
+                    <textarea name="texte" id="editor" cols="30" rows="10"></textarea>
                 </div>
             </div>
         </div>
