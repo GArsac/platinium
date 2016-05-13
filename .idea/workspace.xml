@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87a0d70e-851d-4192-8000-480ab99f890e" name="Default" comment="version site améliorer" />
-    <list id="915d3e11-50d4-48c9-9e29-6e43fa699f62" name="New changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/platinium.iml" afterPath="$PROJECT_DIR$/.idea/platinium.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="87a0d70e-851d-4192-8000-480ab99f890e" name="Default" comment="version site améliorer">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/script.php" afterPath="$PROJECT_DIR$/views/pages/script.php" />
     </list>
+    <list id="915d3e11-50d4-48c9-9e29-6e43fa699f62" name="New changelist" comment="" />
     <list id="1a1a5852-06df-4c11-bc77-e2a8509b1cb5" name="Rejected commit: Default" comment="version site améliorer" />
     <ignored path="platinium-article.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,9 +79,9 @@
         <entry file="file://$PROJECT_DIR$/views/pages/script.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.47710842">
-              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
               <folding>
-                <marker date="1463138290265" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
+                <marker date="1463139357345" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
               </folding>
             </state>
           </provider>
@@ -565,7 +560,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
           <folding>
-            <marker date="1463138290265" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
+            <marker date="1463139357345" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
           </folding>
         </state>
       </provider>
@@ -610,7 +605,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
           <folding>
-            <marker date="1463138290265" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
+            <marker date="1463139357345" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
           </folding>
         </state>
       </provider>
@@ -886,9 +881,9 @@
     <entry file="file://$PROJECT_DIR$/views/pages/script.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47710842">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
           <folding>
-            <marker date="1463138290265" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
+            <marker date="1463139357345" expanded="true" signature="389:469" placeholder="SELECT nom,i... " />
           </folding>
         </state>
       </provider>

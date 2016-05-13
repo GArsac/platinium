@@ -25,4 +25,4 @@ $result = $stmt->fetch();
 
 new Article($result->id_article,$result->txt,$result->date,$result->id_theme,$result->id_profil);
 
-header('Location:home.php');
+header('Location:home.php');Zsud 
