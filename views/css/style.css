@@ -1,0 +1,120 @@
+/*Pour la page de profil*/
+
+/*Pour la page de connexion*/
+/*Back page*/
+body {
+    background-color: lightgray;
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Roboto,arial,sans-serif;
+}
+
+/*Titre de page*/
+.titre{
+    background : cornflowerblue;
+    font-size: 35px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.form-login {
+    background-color: #EDEDED;
+    filter: alpha(opacity=0.4);
+    margin-top: 25%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+    
+}
+
+.form-signin
+{
+    background-color: #EDEDED;
+    filter: alpha(opacity=0.2);
+    margin-top: 20%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+
+}
+
+.form-profil
+{
+    background-color: #EDEDED;
+    filter: alpha(opacity=0.2);
+    margin-top: 40%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+
+}
+
+
+.profil{
+    padding-left: 35%;
+}
+
+
+.btn
+{
+    background-color: green;
+    align-content: center;
+}
+
+h1{
+    text-align: center;
+    padding-bottom:10px;
+}
+
+h4 {
+    border:0 solid #fff;
+    border-bottom-width:1px;
+    padding-bottom:10px;
+    text-align: center;
+    font-size: 25px;
+}
+
+p
+{
+    text-align: center;
+}
+
+/*Position bouton de la navbar*/
+.right{
+    right:100%;
+}
+
+/*Images dans le carousel*/
+.center{
+    text-align:center;
+}
+
+.left{
+    float: left;
+}
+
+/*Pour la page de catalogue*/
+#button{
+    border-radius: 10px;
+    color: white;
+    background-color: orangered;
+}
+
+.article{
+    background: lightgrey;
+}

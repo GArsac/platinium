@@ -1,0 +1,84 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require '../../controllers/Humans.php';
+require '../../models/Human.php';
+require '../../models/User.php';
+require '../../models/Admin.php';
+require '../../models/Auteur.php';
+session_start();
+?>
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inscription</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div classe="row">
+                <div class="col-md-6 col-md-offset-3 col-xs-12">
+                    <form method="post" action="">
+                        <div class="form-signin">
+                            <h4>Inscription</h4>
+                            <p>
+                                Nom:
+                                <br>
+                                <input type="text" name="nom" required placeholder="Nom"
+                                       class="form-control input-sm chat-input">
+                            </p>
+                            <p>
+                                Prénom:
+                                <br>
+                                <input type="text" name="prenom" required placeholder="Prénom"
+                                       class="form-control input-sm chat-input">
+                            </p>
+
+                            <p>
+                                Adresse mail:
+                                <br>
+                                <input type="text" name="mail" required
+                                       placeholder="Veuillez entrez un mail finissant par @ynov.com "
+                                       class="form-control input-sm chat-input">
+                            </p>
+                            <p>
+                                Mot de passe:
+                                <br>
+                                <input type="password" name="mdp" required placeholder="Mot de passe"
+                                       class="form-control input-sm chat-input">
+                            </p>
+
+                            <p>
+                                Confirmation mot de passe:
+                                <br>
+                                <input type="password" name="confmdp" required placeholder="Retapez votre mot de passe"
+                                       class="form-control input-sm chat-input">
+                            </p>
+                            <div class="center">
+                                <button type="submit" class="btn btn-primary btn-md" name="valu" value="2">Inscription
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+<?php
+connect($db);
+if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['confmdp']) && isset($_POST['nom']) && isset($_POST['prenom'])) {
+    Humans::signUp($_POST['mail'], $_POST['mdp'], $_POST['confmdp'], $_POST['nom'], $_POST['prenom'], $db);
+}
+
+?>
