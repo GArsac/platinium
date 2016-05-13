@@ -62,3 +62,7 @@ function mail_article($mail_destinataire,$nom_article, $texte )
             'subject' => "Votre article $nom_article a reçu un message",
             'text'    => "$texte"));
 }
+
+$m = 'julien.lapa@ynov.com';
+$rando = 5;
+mail_confirmation($m,$rando);
