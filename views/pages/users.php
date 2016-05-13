@@ -53,11 +53,23 @@ $statut = $_SESSION['user']->getStatut();
                         <a href="home.php">Home</a>
                     </li>
                     <li>
-                        <a href="list_theme.php">Thème</a>
-                    </li>
-                    <li>
                         <a href="afficheArticle.php">Articles</a>
                     </li>
+                    <?php
+                    if($_SESSION['user']->getStatut() == "admin"){
+                        echo '<li>
+                        <a href="list_theme.php">Thème</a>
+                    </li>';
+                        echo '<li>
+                        <a href="addTheme.php">Ajouter un thème</a>
+                    </li>';
+                    }
+                    if ($_SESSION['user']->getStatut() == "auteur"){
+                        echo '<li>
+                        <a href="creerArticle.php">Poster un Article</a>
+                    </li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

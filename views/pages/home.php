@@ -42,12 +42,26 @@ session_start();
                     <a href="users.php">Profil</a>
                 </li>
                 <li>
+                    <a href="afficheArticle.php">Articles</a>
+                </li>
+                <?php
+                if($_SESSION['user']->getStatut() == "admin"){
+                    echo '<li>
                     <a href="list_theme.php">Thème</a>
-                </li>
-                <li>
-                    <a href="articles.php">Articles</a>
-                </li>
+                </li>';
+                    echo '<li>
+                    <a href="addTheme.php">Ajouter un thème</a>
+                </li>';
+                }
+                if ($_SESSION['user']->getStatut() == "auteur"){
+                    echo '<li>
+                    <a href="creerArticle.php">Poster un Article</a>
+                </li>';
+                }
+                ?>
+
             </ul>
+
         </div>
     </div>
 </nav>

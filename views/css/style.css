@@ -104,6 +104,10 @@ p
     text-align:center;
 }
 
+.left{
+    float: left;
+}
+
 /*Pour la page de catalogue*/
 #button{
     border-radius: 10px;
