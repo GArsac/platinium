@@ -1,6 +1,5 @@
 <?php
 
-require '../models/mail.php';
 class Humans
 {
 
@@ -36,7 +35,7 @@ class Humans
                     $_SESSION['user'] = Human::findByCrendential($mail, $mdp, $db);
                    header('Location:../views/pages/home.php');
                 } elseif ($result->enabled == 0) {
-                    echo 'Vous n\'êtes pas autorisé à accéder au service';
+                    header('Location:../views/pages/checKey.php');
                 }
             } elseif ($result == 0) {
                 echo 'Erreur dans la connexion:Le mot de passe ou le login est incorrect.';
@@ -82,7 +81,6 @@ class Humans
                     Database::signUp($db, $mail, $nom, $prenom, $mdp, $date, $statut,$key);
                     echo 'Inscription réussite';
                     
-                    mail_confirmation($mail, $key);
                     header('../views/index.php');
                 } else {
                     echo 'Echec de l\'inscription:les champs Mot de passe et Confirmation mot de passe ne sont pas les mêmes.';

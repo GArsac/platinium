@@ -29,7 +29,7 @@ require '../../models/connect.php';
 
         for ($i=0;$i<$taille;$i++)
         {
-            echo '<li>' . $result[$i]->nom . '<input type="radio" name="article" value="' . $result[$i]->id_article . '"></li>';
+            echo '<li>' . htmlentities($result[$i]->nom) . '<input type="radio" name="article" value="' . $result[$i]->id_article . '"></li>';
         }
         ?>
     </ul>

@@ -61,6 +61,8 @@ session_start();
 </html>
 <?php
 connect($db);
-
-Humans::signIn($_POST['mail'], $_POST['mdp'], $db);
+if(isset($_POST['mail']) && $_POST['mdp']) {
+    $_SESSION['mail']=$_POST['mail'];
+    Humans::signIn($_POST['mail'], $_POST['mdp'], $db);
+}
 ?>

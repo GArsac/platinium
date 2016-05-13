@@ -55,9 +55,9 @@ $statut = $_SESSION['user']->getStatut();
                     <li>
                         <a href="list_theme.php">Thème</a>
                     </li>
-                    <lik>
-                        <a href="articles.php">Articles</a>
-                    </lik>
+                    <li>
+                        <a href="afficheArticle.php">Articles</a>
+                    </li>
                 </ul>
             </div>
         </div>

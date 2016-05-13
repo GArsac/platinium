@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: guillaume
- * Date: 12/05/2016
- * Time: 14:43
- */
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 require 'afficheArticle.php';
