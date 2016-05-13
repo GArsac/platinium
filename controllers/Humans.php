@@ -61,7 +61,7 @@ class Humans
             $piece = substr($mail, -9);
             /*On vérifie que l'email entré finit bien par @ynov.com*/
             if ($piece != $confmail) {
-                echo 'Echec de l\'inscription: Vous n\'avez pas entré un mail finissant par @ynov.com';
+                echo '<div class="center">Echec de l\'inscription: Vous n\'avez pas entré un mail finissant par @ynov.com</div>';
                 echo '<br>';
                 header('../views/pages/signUp.php');
                 return false;
@@ -69,7 +69,7 @@ class Humans
             /* On vérifie si il n'existe pas d'utilisateur possédant le même mail*/
             $result = Database::checkSignUp($mail, $db);
             if ($result == 1) {
-                echo 'Il existe déjà un utilisateur ayant cet email dans notre base de données';
+                echo '<div class="center">Il existe déjà un utilisateur ayant cet email dans notre base de données</div>';
                 echo '<br>';
                 header('../views/pages/signUp.php');
             }
@@ -79,17 +79,17 @@ class Humans
                     $key = self::randomKey();
                     /*On insère les valeurs dans la bdd*/
                     Database::signUp($db, $mail, $nom, $prenom, $mdp, $date, $statut,$key);
-                    echo 'Inscription réussite';
-                    
+                    echo '<div class="center">Inscription réussite</div>';
+
                     header('../views/index.php');
                 } else {
-                    echo 'Echec de l\'inscription:les champs Mot de passe et Confirmation mot de passe ne sont pas les mêmes.';
+                    echo '<div class="center">Echec de l\'inscription:les champs Mot de passe et Confirmation mot de passe ne sont pas les mêmes.</div>';
                     echo '<br>';
                     header('../views/pages/signUp.php');
                 }
             }
         } else {
-            echo 'Echec de l\'inscription: vous avez omis un ou plusieurs champs.';
+            echo '<div class="center">Echec de l\'inscription: vous avez omis un ou plusieurs champs.</div>';
             echo '<br>';
             header('../views/pages/signUp.php');
         }

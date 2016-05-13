@@ -13,7 +13,6 @@ require '../../models/Article.php';
 session_start();
 connect($db);
 
-var_dump($_POST);
 
 $_SESSION['user']->createArticle($_POST['articleName'], $_POST['theme'], $_POST['texte'], $db);
 
@@ -26,3 +25,4 @@ $result = $stmt->fetch();
 
 new Article($result->id_article,$result->txt,$result->date,$result->id_theme,$result->id_profil);
 
+header('Location:home.php');
